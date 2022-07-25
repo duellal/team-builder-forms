@@ -1,28 +1,36 @@
 import React, { useState } from 'react'
 import './App.css';
 import Form from './form'
+import Team from './teams'
 
 const initialFormValues = {
   name: '',
   email: '',
-  role: ''
+  role: '',
+  teamName: '',
 }
 
 function App() {
   const [teamMem, setTeamMem] = useState({
     name: '',
     email: '',
-    role: ''
+    role: '',
+    teamName: ''
   })
 
   const [formValues, setFormValues] = useState(initialFormValues)
 
-  const updateForm = () => {
-    null
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({ ...formValues, [inputName]: inputValue })
   }
 
   const submitForm = () => {
-    null
+    const newMem = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role,
+      teamName: formValues.teamName.trim()
+    }
   }
 
   return (
@@ -32,6 +40,13 @@ function App() {
         update={updateForm}
         submit={submitForm}
       />
+
+      {/* {teamMem.map(mem => {
+      return (
+        <Team key={teamMem.id} details={teamMem} />
+      )
+    }
+    )} */}
     </div>
   );
 }

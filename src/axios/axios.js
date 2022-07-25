@@ -1,5 +1,3 @@
-// Adding this did not get rid of the error
-
 import { v4 as uuid } from 'uuid'
 
 // 👉 the shape of the list of friends from API

@@ -4,7 +4,8 @@ export default function Form(props) {
    const { values, update, submit } = props
 
    const onChange = event => {
-      const { name, value } = event
+      const { name, value } = event.target
+
       update(name, value)
    }
 
@@ -22,7 +23,7 @@ export default function Form(props) {
                   type={'text'}
                   placeholder='Team Member Name'
                   value={values.name}
-                  name='team member'
+                  name='name'
                   onChange={onChange}
                />
             </label>
@@ -31,7 +32,7 @@ export default function Form(props) {
                   type={'text'}
                   placeholder='Team Member Email'
                   value={values.email}
-                  name='team member'
+                  name='email'
                   onChange={onChange}
                />
             </label>
@@ -52,17 +53,19 @@ export default function Form(props) {
             <label> Team Name:
                <select
                   value={values.teamName}
-                  name='team name'
+                  name='teamName'
                   onChange={onChange}
                >
                   <option value=''>Select Team</option>
-                  <option value=''>Purple Dinosaurs</option>
-                  <option value=''>Bubbly Boba</option>
-                  <option value=''>Lyrical Developers</option>
+                  <option value='purple dinosaurs'>Purple Dinosaurs</option>
+                  <option value='bubbly boba'>Bubbly Boba</option>
+                  <option value='lyrical developers'>Lyrical Developers</option>
                </select>
             </label>
-            <button disabled={null}>Add Member</button>
-         </form>
-      </div>
+            <div className="submit">
+               <button disabled={!values.name || !values.email || !values.teamName || !values.role}>Add Member</button>
+            </div>
+         </form >
+      </div >
    )
 }

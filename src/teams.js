@@ -10,11 +10,11 @@ export default function Team(props) {
    return (
       <div className='team container'>
          <h2>{details.teamName}</h2>
-         <div className='member container'>
-            <h3>{details.name}</h3>
-            <p>Email: {details.email}</p>
-            <p>Role: {details.role}</p>
-         </div>
+         {/* <div className='member container'> */}
+         <h3>{details.name}</h3>
+         <p>Email: {details.email}</p>
+         <p>Role: {details.role}</p>
+         {/* </div> */}
       </div>
    )
 }

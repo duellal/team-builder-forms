@@ -1,7 +1,8 @@
-import { assertExpressionStatement } from '@babel/types';
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import axios from './axios/axios'
+
 import './App.css';
+
 import Form from './form'
 import Team from './teams'
 

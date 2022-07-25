@@ -43,11 +43,11 @@ export default function Form(props) {
                   onChange={onChange}
                >
                   <option value=''>Select Role</option>
-                  <option value='back-end'>Back End Developer</option>
-                  <option value='data-scientist'>Data scientist</option>
-                  <option value='front-end'>Front End Developer</option>
-                  <option value='team-lead'>Team Lead</option>
-                  <option value='UX'>UX Designer</option>
+                  <option value='Back End Developer'>Back End Developer</option>
+                  <option value='Data Scientist'>Data scientist</option>
+                  <option value='Front End Developer'>Front End Developer</option>
+                  <option value='Team Lead'>Team Lead</option>
+                  <option value='UX Designer'>UX Designer</option>
                </select>
             </label>
             <label> Team Name:
@@ -57,9 +57,9 @@ export default function Form(props) {
                   onChange={onChange}
                >
                   <option value=''>Select Team</option>
-                  <option value='purple dinosaurs'>Purple Dinosaurs</option>
-                  <option value='bubbly boba'>Bubbly Boba</option>
-                  <option value='lyrical developers'>Lyrical Developers</option>
+                  <option value='Purple Dinosaurs'>Purple Dinosaurs</option>
+                  <option value='Bubbly Boba'>Bubbly Boba</option>
+                  <option value='Lyrical Developers'>Lyrical Developers</option>
                </select>
             </label>
             <div className="submit">

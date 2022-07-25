@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+// Cannot get code to work with axios installation:
+// import axios from 'axios'
+// Code works with hard coded axios - not sure why this works, but the other way does not:
 import axios from './axios/axios'
 
 import './App.css';
@@ -27,7 +30,7 @@ function App() {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
       role: formValues.role,
-      teamName: formValues.teamName.trim()
+      teamName: formValues.teamName,
     }
 
     if (!newMem.name || !newMem.email || !newMem.role || !newMem.teamName) return
@@ -53,7 +56,7 @@ function App() {
   }, [])
 
   return (
-    <div className='container'>
+    < div className='container' >
       <h1>Company Teams</h1>
 
       <Form
@@ -69,7 +72,7 @@ function App() {
           )
         })
       }
-    </div>
+    </div >
   );
 }
 

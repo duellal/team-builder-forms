@@ -68,10 +68,14 @@ p {
   margin: 10px;
   padding-bottom: 10px;
   width: 50%;
+  display: flex;
+  align-content: space-between;
 }
 
 .member {
   width: 50%;
+  display: flex;
+  justify-content: start;
 }
 
 form {

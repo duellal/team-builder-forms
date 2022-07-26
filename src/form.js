@@ -22,7 +22,7 @@ export default function Form(props) {
             <label> Team Member Name:
                <input
                   type={'text'}
-                  placeholder='Team Member Name'
+                  placeholder='    Team Member Name'
                   value={values.name}
                   name='name'
                   onChange={onChange}
@@ -30,8 +30,8 @@ export default function Form(props) {
             </label>
             <label> Team Member Email:
                <input
-                  type={'text'}
-                  placeholder='Team Member Email'
+                  type={'email'}
+                  placeholder='    Team Member Email'
                   value={values.email}
                   name='email'
                   onChange={onChange}

@@ -1,3 +1,7 @@
+* {
+  /* border: 1px solid black; */
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,6 +28,20 @@ h1 {
   justify-content: center;
 }
 
+h3 {
+  width: 100%;
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+}
+
+p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -36,18 +54,24 @@ h1 {
   width: 25%;
 }
 
-.form,
-.teams {
+.form {
   padding: 20px;
 }
 
 .form {
   background-color: #caf0f8;
-  ;
+  margin: 1% 30%;
 }
 
 .teams {
   background-color: #90e0ef;
+  margin: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+}
+
+.member {
+  width: 50%;
 }
 
 form {
@@ -60,16 +84,19 @@ form {
 form label {
   padding: 6px 0;
   font-size: 18px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 3.5rem;
 }
 
-label input,
-label select {
+input,
+select {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   font-size: 16px;
   padding: 5px;
-  align-items: center;
+  width: 100%;
 }
 
 .submit {
@@ -82,4 +109,9 @@ label select {
 button {
   font-size: 15px;
   padding: 5px;
+}
+
+button.edit {
+  padding: 0 10px;
+  font-size: 16px;
 }

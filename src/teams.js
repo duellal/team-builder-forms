@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Team(props) {
-   const { details } = props
+   const { details, editMem } = props
+
+   // useEffect(() => {
+   //    return
+   // }
 
    if (!details) {
       return <h3>Fetching Team Details...</h3>
@@ -16,8 +20,8 @@ export default function Team(props) {
                <h3>{details.name}</h3>
                <p>Email: {details.email}</p>
                <p>Role: {details.role}</p>
-               {/* Team Name not showing up */}
                <p>Team: {details.teamName}</p>
+               <button onClick={null}>Edit</button>
             </div>
          </div>
          {/* <div className='indvTeam container'>

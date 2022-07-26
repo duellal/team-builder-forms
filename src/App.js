@@ -3,11 +3,14 @@ import React, { useEffect, useState } from 'react'
 // import axios from 'axios'
 // Code works with hard coded axios - not sure why this works, but the other way does not:
 import axios from './axios/axios'
-
-import './App.css';
+import styled from 'styled-components'
 
 import Form from './form'
 import Team from './teams'
+
+const StyleApp = styled.div`
+  text-align:center;
+`
 
 const initialFormValues = {
   name: '',
@@ -18,8 +21,8 @@ const initialFormValues = {
 
 function App() {
   const [teamMem, setTeamMem] = useState([])
-
   const [formValues, setFormValues] = useState(initialFormValues)
+  const [memberToEdit, setMemberToEdit] = useState([])
 
   const updateForm = (inputName, inputValue) => {
     setFormValues({ ...formValues, [inputName]: inputValue })
@@ -56,23 +59,25 @@ function App() {
   }, [])
 
   return (
-    < div className='container' >
-      <h1>Company Teams</h1>
+    <StyleApp>
+      < div className='container' >
+        <h1>Company Teams</h1>
 
-      <Form
-        values={formValues}
-        update={updateForm}
-        submit={submitForm}
-      />
+        <Form
+          values={formValues}
+          update={updateForm}
+          submit={submitForm}
+        />
 
-      {
-        teamMem.map(mem => {
-          return (
-            <Team key={mem.id} details={mem} />
-          )
-        })
-      }
-    </div >
+        {
+          teamMem.map(mem => {
+            return (
+              <Team key={mem.id} details={mem} editMem={memberToEdit} />
+            )
+          })
+        }
+      </div >
+    </StyleApp>
   );
 }
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 // import axios from 'axios'
 // Code works with hard coded axios - not sure why this works, but the other way does not:
 import axios from './axios/axios'
-import styled from 'styled-components'
+import * as Yup from 'yup'
 
 import './App.css';
 
@@ -64,6 +64,8 @@ function App() {
         values={formValues}
         update={updateForm}
         submit={submitForm}
+        formState={formValues}
+        setFormState={setFormValues}
       />
 
       {

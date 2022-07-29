@@ -1,20 +1,7 @@
 import React from "react";
-import styled from 'styled-components'
 
 export default function Form(props) {
-   const { values, update, submit } = props
-
-   const onChange = event => {
-      const { name, value } = event.target
-
-      update(name, value)
-   }
-
-   const onSubmit = event => {
-      event.preventDefault()
-
-      submit()
-   }
+   const { values, onSubmit, onChange } = props
 
    return (
       <div className='form container' onSubmit={onSubmit}>

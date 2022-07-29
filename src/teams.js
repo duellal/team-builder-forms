@@ -1,8 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
 
 export default function Team(props) {
-   const { details } = props
+   const { details, onEdit } = props
 
    if (!details) {
       return <h3>Fetching Team Details...</h3>
@@ -37,7 +36,7 @@ export default function Team(props) {
                <p>Role: {details.role}</p>
             </div>
          </div> */}
-         <button className='edit'>Edit</button>
+         <button className='edit' onClick={onEdit} value={details.id}>Edit</button>
       </div>
    )
 }

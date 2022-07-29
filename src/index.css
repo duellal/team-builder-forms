@@ -1,0 +1,121 @@
+* {
+  /* border: 1px solid black; */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0077b6;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  font-size: 40px;
+  color: #90e0ef;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  width: 100%;
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+}
+
+p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container.form {
+  width: 25%;
+}
+
+.form {
+  padding: 20px;
+}
+
+.form {
+  background-color: #caf0f8;
+  margin: 1% 30%;
+}
+
+.teams {
+  background-color: #90e0ef;
+  margin: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+  display: flex;
+  align-content: space-between;
+}
+
+.member {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+}
+
+form {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+form label {
+  padding: 6px 0;
+  font-size: 18px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 3.5rem;
+}
+
+input,
+select {
+  display: flex;
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+}
+
+.submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 5px 0;
+}
+
+button {
+  font-size: 15px;
+  padding: 5px;
+}
+
+button.edit {
+  padding: 0 10px;
+  font-size: 16px;
+}

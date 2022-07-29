@@ -21,7 +21,7 @@ function App() {
 
   const [formValues, setFormValues] = useState(initialFormValues)
 
-  const [memEdit, setMemEdit] = useState({ name: '', email: '', role: '', teamName: '' })
+  const [editMem, setEditMem] = useState(initialFormValues)
   const [edit, setEdit] = useState(false)
 
 
@@ -39,14 +39,28 @@ function App() {
 
     if (!newMem.name || !newMem.email || !newMem.role || !newMem.teamName) return
 
-    axios
-      .post(Date.now(), newMem)
-      .then(res => {
-        setTeamMem([res.data, ...teamMem])
+    if (editMem) {
+      teamMem.map(mem => {
+        if (mem.id === editMem.id) {
+          mem.name = formValues.name
+          mem.email = formValues.email
+          mem.role = formValues.role
+          mem.teamName = formValues.teamName
+        }
+        else {
+          axios
+            .post(Date.now(), newMem)
+            .then(res => {
+              setTeamMem([res.data, ...teamMem])
+            })
+            .catch(err => {
+              console.log(err)
+            })
+        }
       })
-      .catch(err => {
-        console.log(err)
-      })
+      setEditMem(initialFormValues)
+    }
+    // console.log(teamMem)
 
     setFormValues(initialFormValues)
   }
@@ -72,14 +86,14 @@ function App() {
   }
 
   const editFunc = event => {
-    // if (event.view.$r.hooks[0].value[0].id === teamMem.id) {
+    // if (event.target.value === teamMem.id) {
     teamMem.map(member => {
-      if (event.view.$r.hooks[0].value[0].id === member.id) {
+      if (event.target.value === member.id) {
+
         setFormValues({ ...formValues, name: member.name, email: member.email, role: member.role, teamName: member.teamName })
 
-        setMemEdit(member)
+        setEditMem(member)
       }
-      return -1
     })
 
     // Was trying to make the member container div change to input boxes with current info and the user would be able to change them. Currently, not sure what isn't letting the div change from text into input boxes
